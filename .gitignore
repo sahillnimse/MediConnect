@@ -37,6 +37,7 @@ backend/app/uploads/
 backend/.env
 frontend/.env.local
 frontend/.env.production.local
+frontend/tsconfig.tsbuildinfo
 
 # ── Next.js ───────────────────────────────────────────────────────────────
 frontend/.next/
