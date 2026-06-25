@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────────────────
+   MediConnect — design tokens
+   A calm, clinical, professional palette: deep teal primary on slate
+   neutrals with warm surfaces. Light theme, classy and high-contrast.
+   ─────────────────────────────────────────────────────────────────────── */
+:root {
+  --background: #f6f8fa;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f8;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+
+  --primary: #2563eb;        /* blue-600 */
+  --primary-dark: #1d4ed8;   /* blue-700 */
+  --primary-soft: #dbeafe;   /* blue-100 */
+  --accent: #0b2350;         /* deep navy */
+
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --info: #2563eb;
+}
+
+[data-theme="dark"] {
+  --background: #0f172a;
+  --surface: #172033;
+  --surface-muted: #202b42;
+  --foreground: #e5eefb;
+  --muted: #94a3b8;
+  --border: #334155;
+
+  --primary: #60a5fa;
+  --primary-dark: #bfdbfe;
+  --primary-soft: #1e3a5f;
+  --accent: #2563eb;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #f87171;
+  --info: #60a5fa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utility: subtle elevated card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.hero-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.12) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+/* Thin, tasteful scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; border: 2px solid var(--background); }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
