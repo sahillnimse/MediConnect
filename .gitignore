@@ -20,6 +20,7 @@ backend/env/
 backend/app/connector.db
 backend/app/connector.db-shm
 backend/app/connector.db-wal
+backend/app/csv/
 *.db
 *.sqlite
 *.sqlite3
